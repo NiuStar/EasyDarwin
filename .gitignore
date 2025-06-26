@@ -10,3 +10,4 @@ tem/*
 web-src/node_modules
 web-src/web
 publish.sh
+vendor/*
