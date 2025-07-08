@@ -1,4 +1,4 @@
-FROM registry.cn-hangzhou.aliyuncs.com/nqc/golang:latest as builder
+FROM golang:alpine⁠ as builder
 
 # Create app directory
 RUN mkdir -p /home/app
@@ -15,7 +15,7 @@ ENV GOPATH="/home/app:${GOPATH}"
 RUN cd app &&  go build -mod vendor -ldflags "-w -s" -o ../bin/app ./cmd/server/*.go && \
   chmod +x ../bin/app
 
-FROM registry.cn-hangzhou.aliyuncs.com/nqc/alpine:3.16
+FROM alpine:3.22.0
 
 RUN apk add ffmpeg
 
